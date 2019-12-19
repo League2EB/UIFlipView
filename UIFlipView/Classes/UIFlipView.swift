@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class FlipView: UIView {
+open class UIFlipView: UIView {
 
     /// 旋轉所需時間
     public var spinTimeInterval = 1.0
@@ -16,6 +16,8 @@ open class FlipView: UIView {
     public var frontView = UIView()
     /// 第二個View
     public var behindView = UIView()
+
+    public var delegate: UIFlipDelegate?
 
     private var isDisplayingPrimary = true
 
@@ -58,12 +60,16 @@ open class FlipView: UIView {
     }
 
     @objc
-    final func flipView() {
+    public final func flipView() {
 
         if (isDisplayingPrimary == true) {
             behindView.isHidden = false
         } else {
             behindView.isHidden = true
+        }
+
+        if let delegate = self.delegate {
+            delegate.flipWillStart(duration: spinTimeInterval)
         }
 
         UIView.transition(from: isDisplayingPrimary ? frontView : behindView, to: isDisplayingPrimary ? behindView : frontView, duration: spinTimeInterval, options: [.transitionFlipFromLeft, .showHideTransitionViews]) { [weak self] (finish) in
@@ -74,6 +80,10 @@ open class FlipView: UIView {
                     self.behindView.isHidden = true
                 } else {
                     self.behindView.isHidden = false
+                }
+
+                if let delegate = self.delegate {
+                    delegate.didFinish()
                 }
             }
         }
