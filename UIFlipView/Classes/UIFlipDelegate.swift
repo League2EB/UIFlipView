@@ -7,8 +7,10 @@
 
 import UIKit
 
-public protocol UIFlipDelegate {
+/// 翻轉生命流程
+public protocol UIFlipDelegate: class {
+    /// 已經完成翻轉
     func didFinish()
-
+    /// 即將開始翻轉
     func flipWillStart(duration: TimeInterval)
 }

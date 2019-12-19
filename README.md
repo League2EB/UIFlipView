@@ -1,20 +1,18 @@
 # UIFlipView
 
-[![CI Status](https://img.shields.io/travis/League2EB/UIFlipView.svg?style=flat)](https://travis-ci.org/League2EB/UIFlipView)
-[![Version](https://img.shields.io/cocoapods/v/UIFlipView.svg?style=flat)](https://cocoapods.org/pods/UIFlipView)
-[![License](https://img.shields.io/cocoapods/l/UIFlipView.svg?style=flat)](https://cocoapods.org/pods/UIFlipView)
-[![Platform](https://img.shields.io/cocoapods/p/UIFlipView.svg?style=flat)](https://cocoapods.org/pods/UIFlipView)
+[![Swift 5](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org/)
+[![Core Version](https://img.shields.io/badge/pod-1.8.4-blue.svg)](https://cocoapods.org/)
+![Platform](https://img.shields.io/badge/platform-iOS-007CBD)
+
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+ - iOS 10以上
 
 ## Installation
-
-UIFlipView is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'UIFlipView'
@@ -22,7 +20,7 @@ pod 'UIFlipView'
 
 ## Author
 
-League2EB, Lazy@Lazy.com
+League2EB
 
 ## License
 

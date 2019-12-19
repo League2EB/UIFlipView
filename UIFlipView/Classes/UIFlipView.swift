@@ -1,6 +1,5 @@
 //
 //  FlipView.swift
-//  HelloMyFlipView
 //
 //  Created by Lazy_Lin on 2019/12/19.
 //  Copyright © 2019 Lazy. All rights reserved.
@@ -16,8 +15,8 @@ open class UIFlipView: UIView {
     public var frontView = UIView()
     /// 第二個View
     public var behindView = UIView()
-
-    public var delegate: UIFlipDelegate?
+    /// Delegate事件
+    public weak var delegate: UIFlipDelegate?
 
     private var isDisplayingPrimary = true
 
