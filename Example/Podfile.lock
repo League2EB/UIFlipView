@@ -1,0 +1,16 @@
+PODS:
+  - UIFlipView (0.0.1)
+
+DEPENDENCIES:
+  - UIFlipView (from `../`)
+
+EXTERNAL SOURCES:
+  UIFlipView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UIFlipView: 9cbe2b3aa5f0d728126639ee264f5bbb42a937f3
+
+PODFILE CHECKSUM: 14bd620734bf678fb2b176cf36dc63a9ba3e79fb
+
+COCOAPODS: 1.8.4
