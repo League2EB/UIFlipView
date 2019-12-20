@@ -15,18 +15,25 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.flipView.frontView = AView()
         self.flipView.behindView = BView()
-        self.flipView.spinTimeInterval = 5.0
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
-        self.flipView.addGestureRecognizer(tapGesture)
-
+        self.flipView.flipDirection = .left
+        self.flipView.spinTimeInterval = 1.0
+        self.flipView.delegate = self
     }
 
-    @objc
-    func handleTap(sender: UITapGestureRecognizer) {
+    @IBAction func flipViewBtn(_ sender: Any) {
         self.flipView.flipView()
     }
 }
 
+extension ViewController: UIFlipDelegate {
+
+    func flipWillStart(duration: TimeInterval) {
+        NSLog("flipWillStart durationTime：\(duration)")
+    }
+
+    func flipDidFinish() {
+        NSLog("flipDidFinish")
+    }
+}

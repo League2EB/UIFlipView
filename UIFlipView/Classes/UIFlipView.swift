@@ -7,10 +7,20 @@
 
 import UIKit
 
+/// 旋轉方向
+public enum FlipDirectionType {
+    case top
+    case left
+    case right
+    case bottom
+}
+
 open class UIFlipView: UIView {
 
     /// 旋轉所需時間
     public var spinTimeInterval = 1.0
+    /// 動畫方向
+    public var flipDirection: FlipDirectionType = .left
     /// 第一個View
     public var frontView = UIView()
     /// 第二個View
@@ -19,6 +29,8 @@ open class UIFlipView: UIView {
     public weak var delegate: UIFlipDelegate?
 
     private var isDisplayingPrimary = true
+
+    private var direction: AnimationOptions = .transitionFlipFromLeft
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,6 +70,19 @@ open class UIFlipView: UIView {
         behindView.isHidden = true
     }
 
+    private func flipDirectionPath() -> AnimationOptions {
+        switch self.flipDirection {
+        case .top:
+            return .transitionFlipFromTop
+        case .right:
+            return .transitionFlipFromRight
+        case .left:
+            return .transitionFlipFromLeft
+        case .bottom:
+            return .transitionFlipFromBottom
+        }
+    }
+
     @objc
     public final func flipView() {
 
@@ -71,7 +96,7 @@ open class UIFlipView: UIView {
             delegate.flipWillStart(duration: spinTimeInterval)
         }
 
-        UIView.transition(from: isDisplayingPrimary ? frontView : behindView, to: isDisplayingPrimary ? behindView : frontView, duration: spinTimeInterval, options: [.transitionFlipFromLeft, .showHideTransitionViews]) { [weak self] (finish) in
+        UIView.transition(from: isDisplayingPrimary ? frontView : behindView, to: isDisplayingPrimary ? behindView : frontView, duration: spinTimeInterval, options: [self.flipDirectionPath(), .showHideTransitionViews]) { [weak self] (finish) in
             guard let `self` = self else { return }
             if finish {
                 self.isDisplayingPrimary = !self.isDisplayingPrimary
@@ -82,7 +107,7 @@ open class UIFlipView: UIView {
                 }
 
                 if let delegate = self.delegate {
-                    delegate.didFinish()
+                    delegate.flipDidFinish()
                 }
             }
         }

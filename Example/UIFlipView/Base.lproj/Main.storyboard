@@ -26,12 +26,38 @@
                                     <constraint firstAttribute="width" secondItem="TnS-6h-MQj" secondAttribute="height" multiplier="240:350" id="wpK-kG-iAm"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLN-ES-yP1">
+                                <rect key="frame" x="67.5" y="508.5" width="240" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16B-eE-fgN">
+                                        <rect key="frame" x="0.0" y="50" width="240" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="16B-eE-fgN" secondAttribute="height" multiplier="240:50" id="fet-nx-HhG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="50"/>
+                                        <state key="normal" title="Flip !"/>
+                                        <connections>
+                                            <action selector="flipViewBtn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9Tn-hd-ZQF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="16B-eE-fgN" firstAttribute="width" secondItem="oLN-ES-yP1" secondAttribute="width" multiplier="1:1" id="OK0-hS-4DO"/>
+                                    <constraint firstAttribute="bottom" secondItem="16B-eE-fgN" secondAttribute="bottom" id="OQ4-Gx-yyW"/>
+                                    <constraint firstAttribute="width" secondItem="oLN-ES-yP1" secondAttribute="height" multiplier="240:100" id="Wvv-MY-bCb"/>
+                                    <constraint firstItem="16B-eE-fgN" firstAttribute="centerX" secondItem="oLN-ES-yP1" secondAttribute="centerX" id="t6m-Fv-nDI"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TnS-6h-MQj" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="1x6-bn-OwZ"/>
+                            <constraint firstItem="oLN-ES-yP1" firstAttribute="width" secondItem="TnS-6h-MQj" secondAttribute="width" id="4Dd-KM-nvq"/>
+                            <constraint firstItem="oLN-ES-yP1" firstAttribute="top" secondItem="TnS-6h-MQj" secondAttribute="bottom" id="9S3-jv-JoT"/>
                             <constraint firstItem="TnS-6h-MQj" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="240:375" id="VQh-2t-Rtg"/>
                             <constraint firstItem="TnS-6h-MQj" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Yne-LJ-ABA"/>
+                            <constraint firstItem="oLN-ES-yP1" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="gAr-4A-sLW"/>
                         </constraints>
                     </view>
                     <connections>
@@ -40,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="134"/>
+            <point key="canvasLocation" x="132" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

@@ -7,10 +7,11 @@
 
 import UIKit
 
-/// 翻轉生命流程
+/// 翻轉代理事件
 public protocol UIFlipDelegate: class {
-    /// 已經完成翻轉
-    func didFinish()
+
     /// 即將開始翻轉
     func flipWillStart(duration: TimeInterval)
+    /// 已經完成翻轉
+    func flipDidFinish()
 }

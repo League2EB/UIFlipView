@@ -1,5 +1,5 @@
 PODS:
-  - UIFlipView (0.0.1)
+  - UIFlipView (1.0.0)
 
 DEPENDENCIES:
   - UIFlipView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  UIFlipView: 9cbe2b3aa5f0d728126639ee264f5bbb42a937f3
+  UIFlipView: c0fe09a498f51a65f01c8ababb0fe1866e851b5a
 
 PODFILE CHECKSUM: 14bd620734bf678fb2b176cf36dc63a9ba3e79fb
 
